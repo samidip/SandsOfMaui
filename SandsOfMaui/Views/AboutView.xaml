@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="SandsOfMaui.AboutView"
+             Title="About Us">
+    <VerticalStackLayout Margin="20,20,10,10">
+        <HorizontalStackLayout>
+            <Image Source="mandy.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label LineBreakMode="WordWrap" 
+                    WidthRequest="{OnIdiom Default=200, Phone=250, Tablet=800, Desktop=800}" 
+                    HeightRequest="{OnIdiom Default=200, Phone=250, Tablet=100, Desktop=100}" 
+                    Margin="{OnIdiom Default=15, Phone=15, Tablet=20, Desktop=20}" 
+                    Text="Mandy Mowers (rhymes with Powers) is the Acquisitions Editor for Progress Digital Experience, which means she gets to work with writers and developers from around the world to provide resources for readers of the Telerik/Progress blogs. Reading, writing and editing are some of her passions. Some of her favorite ways to spend time are playing with her dog and playing video games, though she hasn't figured out how to do both at once." />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Image Source="jessica.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label LineBreakMode="WordWrap" 
+                    WidthRequest="{OnIdiom Default=200, Phone=250, Tablet=800, Desktop=800}"
+                    HeightRequest="{OnIdiom Default=200, Phone=180, Tablet=100, Desktop=100}" 
+                    Margin="{OnIdiom Default=15, Phone=15, Tablet=20, Desktop=20}"
+                    Text="Jessica Kent is a writer and editor based in Boston. As a content specialist, she has the opportunity to write about the exciting things happening at Progress, as well as the amazing people behind it all. When she’s not working, you can find her reading, going for a run or attempting to learn the guitar." />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout>
+            <Image Source="sindi.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label LineBreakMode="WordWrap" 
+                    WidthRequest="{OnIdiom Default=200, Phone=250, Tablet=800, Desktop=800}"
+                    HeightRequest="{OnIdiom Default=100, Phone=80, Tablet=50, Desktop=50}" 
+                    Margin="{OnIdiom Default=15, Phone=15, Tablet=20, Desktop=20}"
+                    Text="Sindi Vaskova is a social media specialist @ Progress Software — the real human behind Telerik/Kendo/Fiddler social presences." />
+        </HorizontalStackLayout>
+        <HorizontalStackLayout Margin="0,20,0,0">
+            <Image Source="sam.png" HeightRequest="100" WidthRequest="100" HorizontalOptions="Center" VerticalOptions="Center" />
+            <Label LineBreakMode="WordWrap" 
+                    WidthRequest="{OnIdiom Default=200, Phone=250, Tablet=800, Desktop=800}" 
+                    HeightRequest="{OnIdiom Default=100, Phone=80, Tablet=50, Desktop=50}" 
+                    Margin="{OnIdiom Default=15, Phone=15, Tablet=20, Desktop=20}"
+                    Text="Sam Basu is an aging developer advocate @ Progress Software - author of Sands of MAUI newsletter and app." />
+        </HorizontalStackLayout>
+    </VerticalStackLayout>
+</ContentPage>

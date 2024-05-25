@@ -1,0 +1,46 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             x:Class="SandsOfMaui.IssueListView"
+             Title="List of Issues">
+    
+    <telerik:RadBusyIndicator x:Name="IssueListFetchIndicator"
+                                AnimationType="Animation8"
+                                AnimationContentHeightRequest="150"
+                                AnimationContentWidthRequest="150"
+                                AnimationContentColor="{StaticResource Primary}"
+                                IsBusy="True">
+        <telerik:RadBusyIndicator.BusyContent>
+            <Label Text="Fetching grains of sand ..." HorizontalOptions="Center" VerticalOptions="Center" Margin="20" />
+        </telerik:RadBusyIndicator.BusyContent>
+        <telerik:RadBusyIndicator.Content>
+            <telerik:RadListView x:Name="SandsofMauiIssueList" ItemTapped="IssuePicked">
+                <telerik:RadListView.LayoutDefinition>
+                    <telerik:ListViewLinearLayout ItemLength="90" VerticalItemSpacing="10" />
+                </telerik:RadListView.LayoutDefinition>
+                <telerik:RadListView.ItemTemplate>
+                    <DataTemplate>
+                        <telerik:ListViewTemplateCell>
+                            <telerik:ListViewTemplateCell.View>
+                                <telerik:RadBorder BorderColor="{StaticResource Primary}" BorderThickness="4" CornerRadius="20, 5, 20, 5">
+                                <VerticalStackLayout>
+                                    <HorizontalStackLayout Margin="10,10,0,0">
+                                        <Image Source="somicon.png" HeightRequest="50" WidthRequest="50" Margin="20,0,0,0" VerticalOptions="Center" />
+                                        <Label Text="{Binding Name}" VerticalOptions="Center" Margin="10,0,0,0" Style="{StaticResource SOMBigLabelStyle}" />  
+                                    </HorizontalStackLayout>
+                                    <HorizontalStackLayout Margin="90,0,0,0">
+                                        <Label Text="Published: " Style="{StaticResource SOMSmallLabelStyle}" />
+                                        <Label Text="{Binding Published}" Style="{StaticResource SOMSmallLabelStyle}" />
+                                    </HorizontalStackLayout>
+                                </VerticalStackLayout>
+                            </telerik:RadBorder>    
+                            </telerik:ListViewTemplateCell.View>
+                        </telerik:ListViewTemplateCell>
+                    </DataTemplate>
+                </telerik:RadListView.ItemTemplate>
+            </telerik:RadListView>
+        </telerik:RadBusyIndicator.Content>
+    </telerik:RadBusyIndicator>
+
+</ContentPage>

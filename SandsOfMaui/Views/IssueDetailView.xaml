@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:telerik="http://schemas.telerik.com/2022/xaml/maui"
+             x:Class="SandsOfMaui.IssueDetailView">
+    
+    <telerik:RadBusyIndicator x:Name="IssueDetailFetchIndicator"
+                                            AnimationType="Animation8"
+                                            AnimationContentHeightRequest="150"
+                                            AnimationContentWidthRequest="150"
+                                            AnimationContentColor="#674bb2"
+                                            IsBusy="True">
+        <telerik:RadBusyIndicator.Content>
+            <WebView x:Name="IssueHTML"/>
+        </telerik:RadBusyIndicator.Content>
+    </telerik:RadBusyIndicator> 
+
+</ContentPage>

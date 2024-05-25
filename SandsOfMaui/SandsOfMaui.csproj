@@ -1,0 +1,77 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+	<PropertyGroup>
+		<TargetFrameworks>net8.0-ios</TargetFrameworks>
+		<!--TargetFrameworks>net8.0-ios;net8.0-maccatalyst</TargetFrameworks-->
+		<!-- <TargetFrameworks Condition="$([MSBuild]::IsOSPlatform('windows'))">$(TargetFrameworks);net8.0-windows10.0.19041</TargetFrameworks> -->
+		<OutputType>Exe</OutputType>
+		<RootNamespace>SandsOfMaui</RootNamespace>
+		<UseMaui>true</UseMaui>
+		<SingleProject>true</SingleProject>
+		<ImplicitUsings>enable</ImplicitUsings>
+
+		<!-- Display name -->
+		<ApplicationTitle>SandsOfMaui</ApplicationTitle>
+
+		<!-- App Identifier -->
+		<ApplicationId>com.samidipbasu.sandsofmaui</ApplicationId>
+		<ApplicationIdGuid>F9953E83-9EBA-48B7-A52B-D7C58A46CD69</ApplicationIdGuid>
+
+		<!-- Versions -->
+		<ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+		<ApplicationVersion>1</ApplicationVersion>
+
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'ios'">14.2</SupportedOSPlatformVersion>
+		<!-- <SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'maccatalyst'">14.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'android'">21.0</SupportedOSPlatformVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</SupportedOSPlatformVersion>
+		<TargetPlatformMinVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'windows'">10.0.17763.0</TargetPlatformMinVersion>
+		<SupportedOSPlatformVersion Condition="$([MSBuild]::GetTargetPlatformIdentifier('$(TargetFramework)')) == 'tizen'">6.5</SupportedOSPlatformVersion> -->
+	</PropertyGroup>
+
+	<ItemGroup>
+		
+		<MauiIcon Include="Resources\AppIcon\appicon.svg" ForegroundFile="Resources\AppIcon\somappicon.png" Color="#512BD4" />
+		<MauiSplashScreen Include="Resources\Splash\splash.svg" Color="#512BD4" BaseSize="128,128" />
+
+		<!--MauiImage Include="Resources\Images\*" /-->
+		<MauiImage Include="Resources\Images\jessica.png" />
+		<MauiImage Include="Resources\Images\mandy.png" />
+		<MauiImage Include="Resources\Images\sam.png" />
+		<MauiImage Include="Resources\Images\sindi.png" />
+		<MauiImage Include="Resources\Images\about.svg" />
+		<MauiImage Include="Resources\Images\dotnetmaui.svg" />
+		<MauiImage Include="Resources\Images\issuelist.svg" />
+		<MauiImage Include="Resources\Images\sombanner.png" />
+		<MauiImage Include="Resources\Images\somicon.png" />
+		<MauiImage Include="Resources\Images\telerikui.svg" />
+
+		<MauiFont Include="Resources\Fonts\*" />
+		<MauiAsset Include="Resources\Raw\**" LogicalName="%(RecursiveDir)%(Filename)%(Extension)" />
+	</ItemGroup>
+
+	<ItemGroup Condition="$(TargetFramework.Contains('net8'))">
+		<PackageReference Include="Microsoft.Maui.Controls" Version="$(MauiVersion)" />
+		<PackageReference Include="Microsoft.Maui.Controls.Compatibility" Version="$(MauiVersion)" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Telerik.UI.for.Maui" Version="6.7.0" />
+		<PackageReference Include="Microsoft.Azure.Cosmos" Version="3.37.0" />
+		<PackageReference Include="sqlite-net-pcl" Version="1.8.116" />
+		<PackageReference Include="SQLitePCLRaw.bundle_green" Version="2.1.4" />
+		<PackageReference Include="Plugin.LocalNotification" Version="10.1.8" />
+	</ItemGroup>
+
+	<PropertyGroup Condition="$(TargetFramework.Contains('-ios')) and '$(Configuration)' == 'Release'">
+		<ArchiveOnBuild>true</ArchiveOnBuild>
+		<EnableAssemblyILStripping>false</EnableAssemblyILStripping>
+		<ProvisioningType>manual</ProvisioningType>
+		<RuntimeIdentifier>ios-arm64</RuntimeIdentifier>
+		<CodesignKey>Apple Distribution: Sam Basu (5Q87AUJX42)</CodesignKey>
+		<!--CodesignProvision>Sands_of_MAUI_Dist_Profile</CodesignProvision-->
+		<CodesignProvision>4c583dd2-b194-41ea-bd75-acb168f8a823</CodesignProvision>
+  	</PropertyGroup>
+
+
+</Project>

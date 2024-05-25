@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Shell
+    x:Class="SandsOfMaui.AppShell"
+    xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:views="clr-namespace:SandsOfMaui"
+    Shell.FlyoutBehavior="Flyout"
+    Shell.TabBarIsVisible="false"
+    FlyoutWidth="350">
+
+    <Shell.FlyoutBackground>
+        <LinearGradientBrush StartPoint="0,0" EndPoint="1,1">
+            <GradientStop Color="#91DDF2" Offset="0.0" />
+            <GradientStop Color="#BDDDDE" Offset="0.25" />
+            <GradientStop Color="#DED7CC" Offset="0.50" />
+            <GradientStop Color="#EBE2D3" Offset="1.0" />
+        </LinearGradientBrush>
+    </Shell.FlyoutBackground>
+
+    <Shell.ItemTemplate>
+        <DataTemplate>
+            <Grid ColumnDefinitions="0.2*,0.8*">
+                <Image Source="{Binding FlyoutIcon}"
+                       Margin="5"
+                       HeightRequest="45" />
+                <Label Grid.Column="1"
+                       Text="{Binding Title}"
+                       VerticalTextAlignment="Center" />
+            </Grid>
+        </DataTemplate>
+    </Shell.ItemTemplate>
+    
+    <FlyoutItem FlyoutDisplayOptions="AsMultipleItems">
+        <ShellContent Title="Sands of MAUI Issues"
+                    Icon="issuelist.png"
+                    Route="Issues"
+                    ContentTemplate="{DataTemplate views:IssueListView}" />
+        <ShellContent Title="Made with 💜 &amp; .NET MAUI"
+                    Icon="dotnetmaui.png" 
+                    Route="Maui"
+                    ContentTemplate="{DataTemplate views:MauiView}" />
+        <ShellContent Title="Made with 💜 &amp; Telerik UI for .NET MAUI"
+                    Icon="telerikui.png"
+                    Route="Telerik"
+                    ContentTemplate="{DataTemplate views:TelerikUIView}" />
+        <ShellContent Title="About" 
+                    Icon="about.png"
+                    Route="About"
+                    ContentTemplate="{DataTemplate views:AboutView}" />
+    </FlyoutItem>
+
+    <Shell.FlyoutHeaderTemplate>
+        <DataTemplate>
+            <VerticalStackLayout HeightRequest="350" Margin="20">
+                <Image Aspect="AspectFit"
+                       Source="sombanner.png" WidthRequest="350" HeightRequest="183" />
+                <Label Margin="10"
+                       Text="Welcome to the Sands of MAUI - newsletter style issues dedicated to bringing together latest .NET MAUI content relevant to software developers."
+                       HorizontalTextAlignment="Center"
+                       VerticalTextAlignment="Center" />
+            </VerticalStackLayout>            
+        </DataTemplate>
+    </Shell.FlyoutHeaderTemplate>
+
+    <Shell.FlyoutFooterTemplate>
+        <DataTemplate>
+            <VerticalStackLayout HeightRequest="60" Margin="10">
+                <Label Text="Sands of MAUI"
+                       HorizontalOptions="Center" />
+                <Label Text="telerik.com/blogs/tag/sands-of-maui"
+                       HorizontalOptions="Center" />
+            </VerticalStackLayout>
+        </DataTemplate>
+    </Shell.FlyoutFooterTemplate>
+
+</Shell>
+
