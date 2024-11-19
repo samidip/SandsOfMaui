@@ -14,11 +14,16 @@ public partial class IssueViewModel
 
         if (!IssueDetailInDB)
         {
-            CloudService = new CosmosService();
-		    SelectedIssue = await CloudService.FetchIssue(selectedIssueID);
-            
-            await DatabaseService.SaveIssueDetailToDB(SelectedIssue);
-            Preferences.Set(IssueIdentifer, true);
+            NetworkAccess accessType = Connectivity.Current.NetworkAccess;
+
+            if (accessType == NetworkAccess.Internet)
+            {
+                CloudService = new CosmosService();
+                SelectedIssue = await CloudService.FetchIssue(selectedIssueID);
+                
+                await DatabaseService.SaveIssueDetailToDB(SelectedIssue);
+                Preferences.Set(IssueIdentifer, true);
+            }
         }
         else
         {

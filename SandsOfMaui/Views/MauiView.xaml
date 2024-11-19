@@ -12,7 +12,7 @@
                                               AnimationContentColor="#674bb2"
                                               IsBusy="True">
         <telerik:RadBusyIndicator.Content>
-            <WebView x:Name="MauiWebpageHTML" Source="https://dotnet.microsoft.com/en-us/apps/maui" Navigated="MauiWebpageHTML_Navigated" />
+            <WebView x:Name="MauiWebpageHTML" Navigated="MauiWebpageHTML_Navigated" />
         </telerik:RadBusyIndicator.Content>
     </telerik:RadBusyIndicator> 
 

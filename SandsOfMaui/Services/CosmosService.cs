@@ -2,8 +2,8 @@ namespace SandsOfMaui;
 
 public partial class CosmosService
 {
-    private static readonly string EndpointUri = "Your Cosmos DB Endpoint URI";
-    private static readonly string PrimaryKey = "Your Cosmos DB Key";
+    private static readonly string EndpointUri = "https://sandsofmauibackend.documents.azure.com:443/";
+    private static readonly string PrimaryKey = "VrugmnVC0y4lFGLoZBheDmaYfSxsv7ZV6THsmjdMesgnMQTZm2bRpszvaHNrohH8rngH8N3I1YTvRqIpp4oNGQ==";
     
     private CosmosClient cosmosClient;
     private Database database;

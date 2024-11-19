@@ -31,6 +31,14 @@ public partial class IssueDetailView : ContentPage
 	private async Task FetchAndBindData(string selectedIssueID)
 	{
 		await MyViewModel.FetchData(selectedIssueID);
+
+		if (MyViewModel.SelectedIssue.ID == string.Empty)
+		{
+			this.IssueDetailFetchIndicator.IsBusy = false;
+			await DisplayAlert("Network Alert!", "Your device likely does not have connectivity - please try again later.", "OK");
+			return;
+		}
+
 		this.Title = "Sands of MAUI Issue # " + MyViewModel.SelectedIssue.ID;
         MyHTMLBuilder.BuildDOM(MyViewModel.SelectedIssue.HTMLBody);
 

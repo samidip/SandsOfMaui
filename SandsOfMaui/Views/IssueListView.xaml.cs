@@ -26,7 +26,9 @@ public partial class IssueListView : ContentPage
 
 		if (MyViewModel.ListOfIssues.Count == 0)
 		{
-			await DisplayAlert("Network Alert!", "Your device likely does not have an internet connection - please try again later.", "OK");
+			this.IssueListFetchIndicator.IsBusy = false;
+			await DisplayAlert("Network Alert!", "Your device likely does not have connectivity - please try again later.", "OK");
+			return;
 		}
 
 		Boolean AppLaunchedFromNotification = Preferences.Get("AppLaunchedFromNotification",false);
